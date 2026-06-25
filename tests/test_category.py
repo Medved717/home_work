@@ -26,7 +26,6 @@ def test_products_name(categori_class_init):
     assert categori_class_init.products_list ==  ['Перчатки', 'Цемент', 'Тачанка']
 
 
-# Тест в разработке!!!!!!!
 def test_products(products_class_init_gloves):
     '''Проверка геттера, который возвращает список продуктов в подготовленной строке.'''
 
