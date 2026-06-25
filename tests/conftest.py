@@ -27,3 +27,14 @@ def products_class_init_wheelbarrow():
     return Product(
         'Тачанка', 'Тачанка для работы', 500, 1
     )
+
+@pytest.fixture
+def dict_product():
+    return {"name": "Samsung Galaxy S23 Ultra", "description": "256GB, Серый цвет, 200MP камера", "price": 180000.0,
+         "quantity": 5}
+
+
+@pytest.fixture
+def dict_product_price_zero():
+    return {"name": "Samsung Galaxy S23 Ultra", "description": "256GB, Серый цвет, 200MP камера", "price": 500,
+         "quantity": 5}
