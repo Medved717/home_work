@@ -21,6 +21,12 @@ class Category:
 
 
     @property
+    def products_name(self):
+
+        return self.__products
+
+
+    @property
     def products(self):
         list_products = []
 
@@ -28,8 +34,6 @@ class Category:
             list_products.append(f'{product.name}, {product.price} руб. {product.quantity}: 15 шт.')
 
         return list_products
-
-
 
 
 

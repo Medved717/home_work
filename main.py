@@ -28,8 +28,8 @@ if __name__ == "__main__":
 
     new_product.price = 800
     print(new_product.price)
-    #
-    # new_product.price = -100
-    # print(new_product.price)
-    # new_product.price = 0
-    # print(new_product.price)
+
+    new_product.price = -100
+    print(new_product.price)
+    new_product.price = 0
+    print(new_product.price)
