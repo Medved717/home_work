@@ -1,5 +1,6 @@
 from src.product import Product
 
+
 class Category:
     name: str
     description: str
@@ -20,8 +21,9 @@ class Category:
         Category.product_count += 1
 
 
+    # Не уверен, что данный код нужен, просто хотел оставить геттер, который просто возвращает атрибут????
     @property
-    def products_name(self):
+    def products_list(self):
 
         return self.__products
 
@@ -31,7 +33,7 @@ class Category:
         list_products = []
 
         for product in self.__products:
-            list_products.append(f'{product.name}, {product.price} руб. {product.quantity}: 15 шт.')
+            list_products.append(f'{product.name}, {product.price} руб. Остаток: {product.quantity} шт.')
 
         return list_products
 
