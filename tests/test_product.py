@@ -50,5 +50,10 @@ def test_str_product(products_class_init_cement, products_class_init_wheelbarrow
     assert str(products_class_init_cement) == 'Цемент, 300 руб. Остаток: 5 шт.'
     assert str(products_class_init_wheelbarrow) == 'Тачанка, 500 руб. Остаток: 1 шт.'
 
+def test_add_product(products_class_init_gloves, products_class_init_cement, products_class_init_wheelbarrow):
+    assert products_class_init_gloves + products_class_init_cement == 2000
+    assert products_class_init_gloves + products_class_init_wheelbarrow == 1000
+    assert products_class_init_cement + products_class_init_wheelbarrow == 2000
+
 
 

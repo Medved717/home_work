@@ -41,9 +41,9 @@ def dict_product_price_zero():
 
 
 @pytest.fixture
-def categori_class_init_2():
+def categori_class_init_2(products_class_init_gloves, products_class_init_cement, products_class_init_wheelbarrow):
     return Category(
         'Хозтовары', 'Приобретаемые хозтовары для стройки.',
-                    [products_class_init_gloves,
-                     products_class_init_cement,
-                     products_class_init_wheelbarrow])
+        [products_class_init_gloves,
+                 products_class_init_cement,
+                 products_class_init_wheelbarrow])
