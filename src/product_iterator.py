@@ -5,7 +5,6 @@ class ProductIterator:
         self.index = 0
 
     def __iter__(self):
-        self.index = 0
         return self
 
     def __next__(self):
@@ -15,5 +14,6 @@ class ProductIterator:
             return product
         else:
             raise StopIteration
+
 
 
