@@ -1,4 +1,5 @@
 from src.product import Product
+from src.product_iterator import ProductIterator
 
 
 class Category:
@@ -36,7 +37,8 @@ class Category:
     def __str__(self):
         return f'{self.name}, количество продуктов: {self.product_count} шт.'
 
-
+    def __iter__(self):
+        return ProductIterator(self)
 
 
 
