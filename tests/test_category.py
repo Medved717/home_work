@@ -33,3 +33,12 @@ def test_products(products_class_init_gloves):
     assert result.products == ['Перчатки, 100 руб. Остаток: 5 шт.']
 
 
+def test_category_str(categori_class_init_2):
+    assert str(categori_class_init_2) == 'Хозтовары, количество продуктов: 3 шт.'
+    assert categori_class_init_2.name == 'Хозтовары'
+
+
+
+
+
+
