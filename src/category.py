@@ -15,17 +15,14 @@ class Category:
         Category.category_count += 1
         Category.product_count += len(products)
 
-
     def add_product(self, product):
         self.__products.append(product)
         Category.product_count += 1
-
 
     # Не уверен, что данный код нужен, просто хотел оставить геттер, который просто возвращает атрибут????
     @property
     def products_list(self):
         return self.__products
-
 
     @property
     def products(self):
