@@ -24,7 +24,6 @@ class Category:
     # Не уверен, что данный код нужен, просто хотел оставить геттер, который просто возвращает атрибут????
     @property
     def products_list(self):
-
         return self.__products
 
 
@@ -36,6 +35,10 @@ class Category:
             list_products.append(f'{product.name}, {product.price} руб. Остаток: {product.quantity} шт.')
 
         return list_products
+
+    def __str__(self):
+        return f'{self.name}, количество продуктов: {self.product_count} шт.'
+
 
 
 

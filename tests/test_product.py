@@ -42,3 +42,13 @@ def test_price_setter(dict_product_price_zero, capsys):
     captured = capsys.readouterr()
     assert "Цена не должна быть нулевая или отрицательная" in captured.out
     assert result.price == 500.0
+
+
+def test_str_product(products_class_init_cement, products_class_init_wheelbarrow):
+    '''Проверкаа работы магического метода __str__ в классе Product.'''
+
+    assert str(products_class_init_cement) == 'Цемент, 300 руб. Остаток: 5 шт.'
+    assert str(products_class_init_wheelbarrow) == 'Тачанка, 500 руб. Остаток: 1 шт.'
+
+
+

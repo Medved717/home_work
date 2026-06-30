@@ -38,3 +38,12 @@ def dict_product():
 def dict_product_price_zero():
     return {"name": "Samsung Galaxy S23 Ultra", "description": "256GB, Серый цвет, 200MP камера", "price": 500,
          "quantity": 5}
+
+
+@pytest.fixture
+def categori_class_init_2():
+    return Category(
+        'Хозтовары', 'Приобретаемые хозтовары для стройки.',
+                    [products_class_init_gloves,
+                     products_class_init_cement,
+                     products_class_init_wheelbarrow])
