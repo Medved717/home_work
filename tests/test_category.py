@@ -37,7 +37,7 @@ def test_products(products_class_init_gloves):
 def test_category_str(categori_class_init_2):
     '''Проверкаа работы магического метода __str__ в классе Category.'''
 
-    assert str(categori_class_init_2) == 'Хозтовары, количество продуктов: 3 шт.'
+    assert str(categori_class_init_2) == 'Хозтовары, количество продуктов: 11 шт.'
     assert categori_class_init_2.name == 'Хозтовары'
     assert len(categori_class_init_2.products) == 3
 

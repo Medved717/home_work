@@ -1,3 +1,5 @@
+from itertools import product
+
 from src.product import Product
 from src.product_iterator import ProductIterator
 
@@ -35,7 +37,8 @@ class Category:
         return list_products
 
     def __str__(self):
-        return f'{self.name}, количество продуктов: {self.product_count} шт.'
+        quentity_product = sum(product.quantity for product in self.products_list)
+        return f'{self.name}, количество продуктов: {quentity_product} шт.'
 
     def __iter__(self):
         return ProductIterator(self)
