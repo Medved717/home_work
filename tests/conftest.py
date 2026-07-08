@@ -1,6 +1,8 @@
 import pytest
 
-from lawn_grass import LawnGrass
+
+from src.lawn_grass import LawnGrass
+from src.smartphone import Smartphone
 from src.category import Category
 from src.product import Product
 
@@ -59,3 +61,16 @@ def grass_1():
 @pytest.fixture()
 def grass_2():
     return LawnGrass("Газонная трава 2", "Выносливая трава", 450.0, 15, "США", "5 дней", "Темно-зеленый")
+
+
+@pytest.fixture()
+def smartphone_1():
+    return Smartphone("Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0,
+                      5, 95.5, "S23 Ultra", 256, "Серый")
+
+
+@pytest.fixture()
+def smartphone_2():
+    return Smartphone("Iphone 15", "512GB, Gray space", 210000.0,
+                      8, 98.2, "15", 512, "Gray space")
+
