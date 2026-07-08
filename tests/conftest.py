@@ -1,4 +1,6 @@
 import pytest
+
+from lawn_grass import LawnGrass
 from src.category import Category
 from src.product import Product
 
@@ -47,3 +49,13 @@ def categori_class_init_2(products_class_init_gloves, products_class_init_cement
         [products_class_init_gloves,
                  products_class_init_cement,
                  products_class_init_wheelbarrow])
+
+
+@pytest.fixture()
+def grass_1():
+    return LawnGrass("Газонная трава", "Элитная трава для газона", 500.0, 20, "Россия", "7 дней", "Зеленый")
+
+
+@pytest.fixture()
+def grass_2():
+    return LawnGrass("Газонная трава 2", "Выносливая трава", 450.0, 15, "США", "5 дней", "Темно-зеленый")
