@@ -11,8 +11,9 @@ from src.product import Product
 def categori_class_init():
     return Category(
         'Хозтовары', 'Приобретаемые хозтовары для стройки.',
-                    ['Перчатки', 'Цемент', 'Тачанка']
+        ['Перчатки', 'Цемент', 'Тачанка']
     )
+
 
 @pytest.fixture
 def products_class_init_gloves():
@@ -20,11 +21,13 @@ def products_class_init_gloves():
         'Перчатки', 'Перчатки для работы', 100, 5
     )
 
+
 @pytest.fixture
 def products_class_init_cement():
     return Product(
         'Цемент', 'Цемент для работы', 300, 5
     )
+
 
 @pytest.fixture
 def products_class_init_wheelbarrow():
@@ -32,25 +35,30 @@ def products_class_init_wheelbarrow():
         'Тачанка', 'Тачанка для работы', 500, 1
     )
 
+
 @pytest.fixture
 def dict_product():
     return {"name": "Samsung Galaxy S23 Ultra", "description": "256GB, Серый цвет, 200MP камера", "price": 180000.0,
-         "quantity": 5}
+            "quantity": 5}
 
 
 @pytest.fixture
 def dict_product_price_zero():
     return {"name": "Samsung Galaxy S23 Ultra", "description": "256GB, Серый цвет, 200MP камера", "price": 500,
-         "quantity": 5}
+            "quantity": 5}
 
 
 @pytest.fixture
 def categori_class_init_2(products_class_init_gloves, products_class_init_cement, products_class_init_wheelbarrow):
     return Category(
-        'Хозтовары', 'Приобретаемые хозтовары для стройки.',
-        [products_class_init_gloves,
-                 products_class_init_cement,
-                 products_class_init_wheelbarrow])
+        "Хозтовары",
+        "Приобретаемые хозтовары для стройки.",
+        [
+            products_class_init_gloves,
+            products_class_init_cement,
+            products_class_init_wheelbarrow
+        ]
+    )
 
 
 @pytest.fixture()
@@ -73,4 +81,3 @@ def smartphone_1():
 def smartphone_2():
     return Smartphone("Iphone 15", "512GB, Gray space", 210000.0,
                       8, 98.2, "15", 512, "Gray space")
-

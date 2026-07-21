@@ -1,6 +1,3 @@
-import pytest
-from src.smartphone import Smartphone
-
 def test_init_class_smartphone_1(smartphone_1):
     assert smartphone_1.name == "Samsung Galaxy S23 Ultra"
     assert smartphone_1.description == "256GB, Серый цвет, 200MP камера"
@@ -34,4 +31,3 @@ def test_mixin_init(capsys, smartphone_1):
     assert "256GB, Серый цвет, 200MP камера" in result_print.out
     assert '180000.0' in result_print.out
     assert '5' in result_print.out
-

@@ -1,5 +1,5 @@
-import pytest
 from src.product import Product
+
 
 def test_product_init(products_class_init_gloves, products_class_init_cement, products_class_init_wheelbarrow):
     '''Проверка конструктора класса Product'''
@@ -29,12 +29,14 @@ def test_new_product(dict_product):
 
 def test_price(dict_product):
     '''Проверка геттера price.'''
+
     result = Product.new_product(dict_product)
     assert result.price == 180000.0
 
 
 def test_price_setter(dict_product_price_zero, capsys):
     '''Проверка геттера products при выводе сообщения в консоль.'''
+
     result = Product.new_product(dict_product_price_zero)
 
     result.price = 0
@@ -50,10 +52,10 @@ def test_str_product(products_class_init_cement, products_class_init_wheelbarrow
     assert str(products_class_init_cement) == 'Цемент, 300 руб. Остаток: 5 шт.'
     assert str(products_class_init_wheelbarrow) == 'Тачанка, 500 руб. Остаток: 1 шт.'
 
+
 def test_add_product(products_class_init_gloves, products_class_init_cement, products_class_init_wheelbarrow):
+    '''Проверка работы класса MixinProduct.'''
+
     assert products_class_init_gloves + products_class_init_cement == 2000
     assert products_class_init_gloves + products_class_init_wheelbarrow == 1000
     assert products_class_init_cement + products_class_init_wheelbarrow == 2000
-
-
-

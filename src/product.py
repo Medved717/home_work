@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 from src.mixin_product import MixinProduct
 
+
 class BaseProduct(ABC):
 
     @abstractmethod
@@ -8,7 +9,7 @@ class BaseProduct(ABC):
         pass
 
 
-class Product(MixinProduct):
+class Product(BaseProduct, MixinProduct):
     name: str
     description: str
     __price: float
@@ -21,8 +22,6 @@ class Product(MixinProduct):
         self.__price = price
         self.quantity = quantity
 
-
-
     @classmethod
     def new_product(cls, dict_product):
         return cls(dict_product["name"], dict_product["description"], dict_product["price"], dict_product["quantity"])
@@ -33,10 +32,10 @@ class Product(MixinProduct):
 
     @price.setter
     def price(self, price):
-         if price <= 0:
-             print('Цена не должна быть нулевая или отрицательная')
-         else:
-             self.__price = price
+        if price <= 0:
+            print('Цена не должна быть нулевая или отрицательная')
+        else:
+            self.__price = price
 
     def __str__(self):
         return f'{self.name}, {self.__price} руб. Остаток: {self.quantity} шт.'
@@ -44,7 +43,3 @@ class Product(MixinProduct):
     def __add__(self, other):
         summ_products = (self.quantity * self.price) + (other.quantity * other.__price)
         return summ_products
-
-
-
-

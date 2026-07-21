@@ -15,4 +15,3 @@ class Smartphone(Product):
             return super().__add__(other)
         else:
             raise TypeError('Неподходящий тип продукта.')
-
