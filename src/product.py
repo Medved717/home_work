@@ -47,5 +47,4 @@ class Product(MixinProduct):
 
 
 
-# a = Product('Наименование', 'Описание', 10000, 1)
-# print(a.__class__.__mro__)
+
