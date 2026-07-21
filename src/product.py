@@ -1,15 +1,27 @@
+from abc import ABC, abstractmethod
+from src.mixin_product import MixinProduct
 
-class Product:
+class BaseProduct(ABC):
+
+    @abstractmethod
+    def __add__(self):
+        pass
+
+
+class Product(MixinProduct):
     name: str
     description: str
     __price: float
     quantity: int
 
     def __init__(self, name, description, price, quantity):
+        super().__init__(name, description, price, quantity)
         self.name = name
         self.description = description
         self.__price = price
         self.quantity = quantity
+
+
 
     @classmethod
     def new_product(cls, dict_product):
@@ -32,3 +44,8 @@ class Product:
     def __add__(self, other):
         summ_products = (self.quantity * self.price) + (other.quantity * other.__price)
         return summ_products
+
+
+
+# a = Product('Наименование', 'Описание', 10000, 1)
+# print(a.__class__.__mro__)
