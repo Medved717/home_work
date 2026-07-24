@@ -20,7 +20,10 @@ class Product(BaseProduct, MixinProduct):
         self.name = name
         self.description = description
         self.__price = price
-        self.quantity = quantity
+        if not quantity <= 0:
+            self.quantity = quantity
+        else:
+            raise ValueError('Товар с нулевым количеством не может быть добавлен')
 
     @classmethod
     def new_product(cls, dict_product):
