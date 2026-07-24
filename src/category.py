@@ -51,4 +51,3 @@ class Category:
         except ZeroDivisionError as e:
             print(f'Отсутствуют продукты для вычисления среднего значения. \n{e}')
             return 0.0
-
