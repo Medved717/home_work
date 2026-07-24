@@ -36,6 +36,11 @@ def test_category_str(categori_class_init_2):
     assert len(categori_class_init_2.products) == 3
 
 
-def test_zero_middle_price():
+def test_zero_middle_price(capsys):
+    '''Тест на проверку пустого списка продуктов в классе Category.'''
+
     category_empty = Category("Пустая категория", "Категория без продуктов", [])
-    assert category_empty.middle_price() == 0.0
+    result = category_empty.middle_price()
+    message = capsys.readouterr()
+    assert message.out.strip() == 'Отсутствуют продукты для вычисления среднего значения.'
+    assert result == 0.0

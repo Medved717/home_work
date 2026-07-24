@@ -46,6 +46,6 @@ class Category:
     def middle_price(self):
         try:
             return sum(product.price for product in self.__products) / len(self.__products)
-        except ZeroDivisionError as e:
-            print(f'Отсутствуют продукты для вычисления среднего значения. \n{e}')
+        except ZeroDivisionError:
+            print('Отсутствуют продукты для вычисления среднего значения.')
             return 0.0
