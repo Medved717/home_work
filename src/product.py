@@ -1,11 +1,22 @@
+from abc import ABC, abstractmethod
+from src.mixin_product import MixinProduct
 
-class Product:
+
+class BaseProduct(ABC):
+
+    @abstractmethod
+    def __add__(self):
+        pass
+
+
+class Product(BaseProduct, MixinProduct):
     name: str
     description: str
     __price: float
     quantity: int
 
     def __init__(self, name, description, price, quantity):
+        super().__init__(name, description, price, quantity)
         self.name = name
         self.description = description
         self.__price = price
@@ -21,10 +32,10 @@ class Product:
 
     @price.setter
     def price(self, price):
-         if price <= 0:
-             print('Цена не должна быть нулевая или отрицательная')
-         else:
-             self.__price = price
+        if price <= 0:
+            print('Цена не должна быть нулевая или отрицательная')
+        else:
+            self.__price = price
 
     def __str__(self):
         return f'{self.name}, {self.__price} руб. Остаток: {self.quantity} шт.'

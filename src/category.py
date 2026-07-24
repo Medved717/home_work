@@ -1,5 +1,3 @@
-from itertools import product
-
 from src.product import Product
 from src.product_iterator import ProductIterator
 
@@ -36,7 +34,6 @@ class Category:
 
         for product in self.__products:
             list_products.append(f'{product.name}, {product.price} руб. Остаток: {product.quantity} шт.')
-
         return list_products
 
     def __str__(self):
@@ -45,9 +42,3 @@ class Category:
 
     def __iter__(self):
         return ProductIterator(self)
-
-
-
-
-
-

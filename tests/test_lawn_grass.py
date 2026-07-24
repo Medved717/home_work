@@ -1,6 +1,3 @@
-import pytest
-from src.lawn_grass import LawnGrass
-
 def test_init_class_lawn_grass_1(grass_1):
     assert grass_1.name == "Газонная трава"
     assert grass_1.description == "Элитная трава для газона"
@@ -24,4 +21,3 @@ def test_init_class_lawn_grass_2(grass_2):
 def test_add_lawn_grass(grass_1, grass_2):
     result = grass_1 + grass_2
     assert result == 16750.0
-
