@@ -1,5 +1,6 @@
 from src.product_iterator import ProductIterator
 
+
 def test_product_iterator(categori_class_init_2):
     iterator = ProductIterator(categori_class_init_2)
     assert iterator.index == 0

@@ -1,5 +1,3 @@
-from itertools import product
-
 from src.product import Product
 from src.product_iterator import ProductIterator
 
@@ -19,8 +17,11 @@ class Category:
         Category.product_count += len(products)
 
     def add_product(self, product):
-        self.__products.append(product)
-        Category.product_count += 1
+        if isinstance(product, Product):
+            self.__products.append(product)
+            Category.product_count += 1
+        else:
+            raise TypeError('Неподходящий тип продукта.')
 
     # Не уверен, что данный код нужен, просто хотел оставить геттер, который просто возвращает атрибут????
     @property
@@ -33,7 +34,6 @@ class Category:
 
         for product in self.__products:
             list_products.append(f'{product.name}, {product.price} руб. Остаток: {product.quantity} шт.')
-
         return list_products
 
     def __str__(self):
@@ -42,9 +42,3 @@ class Category:
 
     def __iter__(self):
         return ProductIterator(self)
-
-
-
-
-
-
