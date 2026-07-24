@@ -1,3 +1,5 @@
+from tomlkit import value
+
 from src.product import Product
 from src.product_iterator import ProductIterator
 
@@ -42,3 +44,11 @@ class Category:
 
     def __iter__(self):
         return ProductIterator(self)
+
+    def middle_price(self):
+        try:
+            return sum(product.price for product in self.__products) / len(self.__products)
+        except ZeroDivisionError as e:
+            print(f'Отсутствуют продукты для вычисления среднего значения. \n{e}')
+            return 0.0
+
