@@ -1,4 +1,6 @@
 from src.product import Product
+import pytest
+from src.smartphone import Smartphone
 
 
 def test_product_init(products_class_init_gloves, products_class_init_cement, products_class_init_wheelbarrow):
@@ -59,3 +61,9 @@ def test_add_product(products_class_init_gloves, products_class_init_cement, pro
     assert products_class_init_gloves + products_class_init_cement == 2000
     assert products_class_init_gloves + products_class_init_wheelbarrow == 1000
     assert products_class_init_cement + products_class_init_wheelbarrow == 2000
+
+
+def test_zero_quentity():
+    with pytest.raises(ValueError, match='Товар с нулевым количеством не может быть добавлен'):
+        Smartphone("Iphone 15", "512GB, Gray space", 210000.0,
+                   0, 98.2, "15", 512, "Gray space")
