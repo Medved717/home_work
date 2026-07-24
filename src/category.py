@@ -1,5 +1,3 @@
-from tomlkit import value
-
 from src.product import Product
 from src.product_iterator import ProductIterator
 

@@ -1,4 +1,5 @@
 from src.category import Category
+import pytest
 
 
 def test_categori_init(categori_class_init):
@@ -34,3 +35,10 @@ def test_category_str(categori_class_init_2):
     assert str(categori_class_init_2) == 'Хозтовары, количество продуктов: 11 шт.'
     assert categori_class_init_2.name == 'Хозтовары'
     assert len(categori_class_init_2.products) == 3
+
+
+def test_zero_middle_price():
+    category_empty = Category("Пустая категория", "Категория без продуктов", [])
+    assert category_empty.middle_price() == 0.0
+
+
